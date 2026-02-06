@@ -1,0 +1,147 @@
+ here i mentioned the sample data for testing the API endpoints. You can use this data to create users, posts, and comments in your application.
+{
+  "name": "John Doe",
+  "username": "johndoe",
+  "email": "john@example.com",
+  "password": "123456"
+}
+
+
+
+
+{
+    "user": {
+        "name": "John Doe",
+        "username": "johndoe",
+        "email": "john@example.com",
+        "password": "$2b$10$o8.ROouWKsDkHNjjMZTCouhgW702NteWgptIpWETS64bP.cFma2ou",
+        "friends": [],
+        "friendRequests": {
+            "sent": [],
+            "received": []
+        },
+        "_id": "6985979f871a3820f985128d",
+        "createdAt": "2026-02-06T07:26:23.161Z",
+        "updatedAt": "2026-02-06T07:26:23.161Z",
+        "__v": 0
+    },
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ODU5NzlmODcxYTM4MjBmOTg1MTI4ZCIsImlhdCI6MTc3MDM2Mjc4MywiZXhwIjoxNzcyOTU0NzgzfQ.3H8jlCq3Q_3rhvHT9Dz_-aSvPDOSIUP_AIed9v80DfI"
+}
+
+
+
+
+{
+    "user": {
+        "friendRequests": {
+            "sent": [],
+            "received": []
+        },
+        "_id": "6985979f871a3820f985128d",
+        "name": "John Doe",
+        "username": "johndoe",
+        "email": "john@example.com",
+        "password": "$2b$10$o8.ROouWKsDkHNjjMZTCouhgW702NteWgptIpWETS64bP.cFma2ou",
+        "friends": [],
+        "createdAt": "2026-02-06T07:26:23.161Z",
+        "updatedAt": "2026-02-06T07:26:23.161Z",
+        "__v": 0
+    },
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ODU5NzlmODcxYTM4MjBmOTg1MTI4ZCIsImlhdCI6MTc3MDM2Mjg3MiwiZXhwIjoxNzcyOTU0ODcyfQ.aIxwdXPZjvQdeT3EEr8d-6Di6LFi3LS9ahy5UTp3TX4"
+}
+
+
+
+ "author": "6985979f871a3820f985128d",
+    "media": [],
+    "likes": [],
+    "_id": "6985991e871a3820f9851290",
+    "createdAt": "2026-02-06T07:32:46.719Z",
+    "updatedAt": "2026-02-06T07:32:46.719Z",
+    "__v": 0
+}
+
+
+
+
+
+
+another
+
+
+{
+  "name": "Alice Smith",
+  "username": "alice",
+  "email": "alice@example.com",
+  "password": "password123"
+}
+
+
+
+
+{
+    "user": {
+        "friendRequests": {
+            "sent": [],
+            "received": []
+        },
+        "_id": "6985c46620273d2b185a42ae",
+        "name": "Alice Smith",
+        "username": "alice",
+        "email": "alice@example.com",
+        "password": "$2b$10$LDYnpY1s7kb8Xos/lI3XYeSQPLBx0PbN9YMWzCXhBPfu96b8pDwbi",
+        "friends": [],
+        "createdAt": "2026-02-06T10:37:26.145Z",
+        "updatedAt": "2026-02-06T10:37:26.145Z",
+        "__v": 0
+    },
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ODVjNDY2MjAyNzNkMmIxODVhNDJhZSIsImlhdCI6MTc3MDM3NDMwOSwiZXhwIjoxNzcyOTY2MzA5fQ.DPwnOEXAi6bw4yroWnM3W-e9FFE_ZqKpEtCgr3HXHNI"
+}
+
+
+{
+  "name": "Jane Smith",
+  "username": "janesmith",
+  "email": "jane@example.com",
+  "password": "password123"
+}
+
+
+
+
+
+
+
+  },
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ODVkMDM2MjAyNzNkMmIxODVhNDJjMCIsImlhdCI6MTc3MDM3NzI3MSwiZXhwIjoxNzcyOTY5MjcxfQ.sy9jCyDFicYa73HgMiZ0IPLfcvem3w2MIRCOzhXvxKc"
+
+{
+    "user": {
+        "friendRequests": {
+            "sent": [],
+            "received": []
+        },
+        "_id": "6985d03620273d2b185a42c0",
+        "name": "Jane Smith",
+        "username": "janesmith",
+        "email": "jane@example.com",
+        "password": "$2b$10$1o3v0OA4Ji9Jn2W4JwX.iuNuBG9Y2ZqPAhE.VgclL1.Eg6JNF9kBO",
+        "friends": [],
+        "createdAt": "2026-02-06T11:27:50.909Z",
+        "updatedAt": "2026-02-06T11:27:50.909Z",
+        "__v": 0
+    },
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ODVkMDM2MjAyNzNkMmIxODVhNDJjMCIsImlhdCI6MTc3MDM3NzQ5NiwiZXhwIjoxNzcyOTY5NDk2fQ.4Z2vUrcBjgayppfIUEkHimDPFE68hjZtj1jRYIKkYQg"
+}
+
+{
+    "author": "6985d03620273d2b185a42c0",
+    "text": "Hello world! This is my first post.",
+    "media": [],
+    "likes": [],
+    "comments": [],
+    "_id": "6985d1bd20273d2b185a42c3",
+    "createdAt": "2026-02-06T11:34:21.199Z",
+    "updatedAt": "2026-02-06T11:34:21.199Z",
+    "__v": 0
+}
