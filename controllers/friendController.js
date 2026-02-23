@@ -8,15 +8,30 @@ export const sendRequest = async (req, res) => {
 
     if (!receiver) return res.status(404).json({ message: "User not found" });
 
+    // Prevent sending request to self
+    if (sender._id.equals(receiver._id)) {
+      return res.status(400).json({ message: "Cannot send request to yourself" });
+    }
+
+    // Check if already friends
+    if (sender.friends.includes(receiver._id)) {
+      return res.status(400).json({ message: "You are already friends" });
+    }
+
+    // Prevent duplicate requests
     if (!sender.friendRequests.sent.includes(receiver._id)) {
       sender.friendRequests.sent.push(receiver._id);
-      receiver.friendRequests.received.push(sender._id);
-      await sender.save();
-      await receiver.save();
     }
+    if (!receiver.friendRequests.received.includes(sender._id)) {
+      receiver.friendRequests.received.push(sender._id);
+    }
+
+    await sender.save();
+    await receiver.save();
 
     res.json({ message: "Friend request sent" });
   } catch (error) {
+    console.error(error);
     res.status(500).json({ message: error.message });
   }
 };
@@ -27,9 +42,13 @@ export const acceptRequest = async (req, res) => {
     const user = await User.findById(req.user);
     const sender = await User.findById(req.params.id);
 
-    user.friends.push(sender._id);
-    sender.friends.push(user._id);
+    if (!sender) return res.status(404).json({ message: "User not found" });
 
+    // Prevent adding duplicate friends
+    if (!user.friends.includes(sender._id)) user.friends.push(sender._id);
+    if (!sender.friends.includes(user._id)) sender.friends.push(user._id);
+
+    // Remove from friend requests
     user.friendRequests.received.pull(sender._id);
     sender.friendRequests.sent.pull(user._id);
 
@@ -38,6 +57,7 @@ export const acceptRequest = async (req, res) => {
 
     res.json({ message: "Friend request accepted" });
   } catch (error) {
+    console.error(error);
     res.status(500).json({ message: error.message });
   }
 };

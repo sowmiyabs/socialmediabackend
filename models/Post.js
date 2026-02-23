@@ -1,14 +1,24 @@
 import mongoose from "mongoose";
 
+const mediaSchema = new mongoose.Schema(
+  {
+    url: { type: String, required: true },
+    type: { type: String, enum: ["image", "video"], required: true },
+  },
+  { _id: false } // no separate ID for each media item
+);
+
 const postSchema = new mongoose.Schema(
   {
     author: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
-    text: { type: String },
-    media: [{ url: String, type: String }],
+    text: { type: String, trim: true },
+    media: [mediaSchema],
     likes: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
-    comments: [{ type: mongoose.Schema.Types.ObjectId, ref: "Comment" }] // ✅ Add this line
+    comments: [{ type: mongoose.Schema.Types.ObjectId, ref: "Comment" }],
   },
-  { timestamps: true }
+  { timestamps: true } // adds createdAt and updatedAt
 );
 
-export default mongoose.model("Post", postSchema);
+const Post = mongoose.model("Post", postSchema);
+
+export default Post;
