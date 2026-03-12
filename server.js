@@ -35,25 +35,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // -----------------------------
-// CORS Setup
+// Enable CORS (simplest way for Render + Netlify)
 // -----------------------------
-const allowedOrigins = [
-  "http://localhost:5174", // local dev
-  "https://comforting-sprinkles-2d0048.netlify.app", // deployed frontend
-];
-
 app.use(cors({
-  origin: function(origin, callback) {
-    if (!origin) return callback(null, true); // allow non-browser clients
-    if (allowedOrigins.indexOf(origin) === -1) {
-      const msg = `CORS error: ${origin} not allowed`;
-      return callback(new Error(msg), false);
-    }
-    return callback(null, true);
-  },
-  credentials: true,
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"],
+  origin: true,       // allow all origins or dynamic origin
+  credentials: true,  // allow cookies / auth headers
 }));
 
 // -----------------------------
