@@ -31,12 +31,17 @@ if (!fs.existsSync(uploadDir)) {
 // -----------------------------
 // Middleware
 // -----------------------------
-app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Optional: Serve local uploads (for testing)
-// app.use("/uploads", express.static(path.join(process.cwd(), "uploads")));
+// Enable CORS for React app
+app.use(cors({
+  origin: "http://localhost:5174", // your React dev server
+  credentials: true,               // allows cookies or auth headers
+}));
+
+// Serve uploaded files
+app.use("/uploads", express.static(uploadDir));
 
 // -----------------------------
 // API Routes
